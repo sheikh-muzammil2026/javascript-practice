@@ -214,18 +214,17 @@
 // Badget tracker app
 
 let userName = prompt("Enter your name : ");
-let numberOfEnxpenses = parseInt(prompt("Enter how many expenses do you have :"));
+let numberOfExpenses = parseInt(prompt("Enter how many expenses do you have :"));
 let income = parseInt(prompt("Enter your total income :"));
 
 
 let expenses= [];
-let expense = 0;
-for (let e =1; e < numberOfEnxpenses; e++){
-     expense = parseInt(prompt(`Enter your ${e} no expense.`));
-    
+for (let e =1; e <= numberOfExpenses; e++){
+    let expense = parseInt(prompt(`Enter your ${e} no expense.`));
+    expenses.push(expense);  // array.push কে লুপের মধ্যে না রাখলে মাত্র একবার পুশ হবে। সবগুলো পুশ হবে না।
 }
 
-expenses.push(expense);
+
 
 let totalExpenses= 0;
 
@@ -234,6 +233,10 @@ for(let i = 0; i < expenses.length; i++){
    totalExpenses += expenses[i];
 
 }
+
+let tax = income * 0.10;
+let netIncome = income - tax;
+let balance = netIncome - totalExpenses;
 
 let savings = balance * 0.20;
 
