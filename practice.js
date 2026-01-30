@@ -210,68 +210,56 @@
 // calc(20, 5);
 
 
+// Budget Tracker App – Phase 6
 
-// Badget tracker app
+let userName = prompt("Enter your name:");
+let numberOfExpenses = Number(prompt("How many expenses do you have?"));
+let income = Number(prompt("Enter your total income:"));
 
-let userName = prompt("Enter your name : ");
-let numberOfExpenses = parseInt(prompt("Enter how many expenses do you have :"));
-let income = parseInt(prompt("Enter your total income :"));
+let expenses = [];
 
-
-let expenses= [];
-for (let e =1; e <= numberOfExpenses; e++){
-    let expense = parseInt(prompt(`Enter your ${e} no expense.`));
-    expenses.push(expense);  // array.push কে লুপের মধ্যে না রাখলে মাত্র একবার পুশ হবে। সবগুলো পুশ হবে না।
+for (let e = 1; e <= numberOfExpenses; e++) {
+    let expense = Number(prompt(`Enter your ${e} no expense:`));
+    expenses.push(expense);
 }
 
-
-
-let totalExpenses= 0;
-
-for(let i = 0; i < expenses.length; i++){
-
-   totalExpenses += expenses[i];
-
+// Calculate total expenses
+let totalExpenses = 0;
+for (let i = 0; i < expenses.length; i++) {
+    totalExpenses += expenses[i];
 }
 
+// Calculations
 let tax = income * 0.10;
 let netIncome = income - tax;
 let balance = netIncome - totalExpenses;
+let savings = balance > 0 ? balance * 0.20 : 0;
 
-let savings = balance * 0.20;
-
-
-// Determining finalcial health status
-
+// Financial status
 let finalStatus = "";
 
-if (savings >= 1000){
-    finalStatus  = "Excellent! ";
-}else if(savings >= 500){
-   finalStatus = "Good.";
-}else if(savings >= 100){
-     finalStatus = "Need to improvment.";
-}else{
-    finalStatus = "Critical.";
+if (savings >= 1000) {
+    finalStatus = "Excellent";
+} else if (savings >= 500) {
+    finalStatus = "Good";
+} else if (savings >= 100) {
+    finalStatus = "Needs improvement";
+} else {
+    finalStatus = "Critical";
 }
 
+// Output
+console.log("Personal Budget Tracker App");
+console.log("User:", userName.toUpperCase());
+console.log("Total income: $" + income);
+console.log("Total expenses: $" + totalExpenses);
+console.log("Tax deduction: $" + tax);
+console.log("Net income after tax: $" + netIncome);
+console.log("Remaining balance: $" + balance);
+console.log("Savings (20%): $" + savings);
+console.log("Final status:", finalStatus);
 
-console.log("Parsonal badget tracker app.")
-console.log("User: "+userName.toLocaleUpperCase());
-console.log("Total income: $"+income);  
-console.log("Total expense: $"+totalExpenses); 
-console.log("Tax deduction: $"+tax);  
-console.log("Net icome after tex: $"+netIncome); 
-console.log("Remaining balance: $"+balance); 
-console.log("Saving 20% of balance: $"+savings);
-console.log("Final status : $"+finalStatus);
-
-
-let ovarSpendingMessage = "";
-if(totalExpenses > netIncome){
-    ovarSpendingMessage = "Warning: your expenses over the income.";
+// Overspending warning
+if (totalExpenses > netIncome) {
+    console.log("⚠️ Warning: Your expenses exceed your income.");
 }
-if (ovarSpendingMessage){
-    console.log(ovarSpendingMessage);
-}
-
