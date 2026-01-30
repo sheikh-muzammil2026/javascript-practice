@@ -216,11 +216,20 @@ let userName = prompt("Enter your name:");
 let numberOfExpenses = Number(prompt("How many expenses do you have?"));
 let income = Number(prompt("Enter your total income:"));
 
+if(isNaN(numberOfExpenses) || numberOfExpenses <= 0){
+     console.log("Please enter a valid number of expenses.");
+}else {
+
 let expenses = [];
 
 for (let e = 1; e <= numberOfExpenses; e++) {
     let expense = Number(prompt(`Enter your ${e} no expense:`));
+    
+if(isNaN(expense) || expense <= 0){
+     console.log("Please enter a valid number of expense.");
+}else {
     expenses.push(expense);
+}
 }
 
 // Calculate total expenses
@@ -262,4 +271,6 @@ console.log("Final status:", finalStatus);
 // Overspending warning
 if (totalExpenses > netIncome) {
     console.log("⚠️ Warning: Your expenses exceed your income.");
+}
+
 }
