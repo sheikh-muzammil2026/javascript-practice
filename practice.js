@@ -212,25 +212,100 @@
 
 // Budget Tracker App – Phase 6
 
-let userName = prompt("Enter your name:");
-let numberOfExpenses = Number(prompt("How many expenses do you have?"));
-let income = Number(prompt("Enter your total income:"));
+// let userName = prompt("Enter your name:");
+// let numberOfExpenses = Number(prompt("How many expenses do you have?"));
+// let income = Number(prompt("Enter your total income:"));
 
-if(isNaN(numberOfExpenses) || numberOfExpenses <= 0){
-     console.log("Please enter a valid number of expenses.");
+// if(isNaN(numberOfExpenses) || numberOfExpenses <= 0){
+//      console.log("Please enter a valid number of expenses.");
+// }else {
+
+// let expenses = [];
+
+// for (let e = 1; e <= numberOfExpenses; e++) {
+//     let expense = Number(prompt(`Enter your ${e} no expense:`));
+    
+// if(isNaN(expense) || expense <= 0){
+//      console.log("Please enter a valid number of expense.");
+// }else {
+//     expenses.push(expense);
+// }
+// }
+
+// // Calculate total expenses
+// let totalExpenses = 0;
+// for (let i = 0; i < expenses.length; i++) {
+//     totalExpenses += expenses[i];
+// }
+
+// // Calculations
+// let tax = income * 0.10;
+// let netIncome = income - tax;
+// let balance = netIncome - totalExpenses;
+// let savings = balance > 0 ? balance * 0.20 : 0;
+
+// // Financial status
+// let finalStatus = "";
+
+// if (savings >= 1000) {
+//     finalStatus = "Excellent";
+// } else if (savings >= 500) {
+//     finalStatus = "Good";
+// } else if (savings >= 100) {
+//     finalStatus = "Needs improvement";
+// } else {
+//     finalStatus = "Critical";
+// }
+
+// // Output
+// console.log("Personal Budget Tracker App");
+// console.log("User:", userName.toUpperCase());
+// console.log("Total income: $" + income);
+// console.log("Total expenses: $" + totalExpenses);
+// console.log("Tax deduction: $" + tax);
+// console.log("Net income after tax: $" + netIncome);
+// console.log("Remaining balance: $" + balance);
+// console.log("Savings (20%): $" + savings);
+// console.log("Final status:", finalStatus);
+
+// // Overspending warning
+// if (totalExpenses > netIncome) {
+//     console.log("⚠️ Warning: Your expenses exceed your income.");
+// }
+
+// }
+
+
+
+// budget tracke app (add function)
+
+
+// Get prompt Message function.
+
+function userInput(promptMessage, isNumber = false){
+    let getUserInput = prompt(promptMessage);
+    return isNumber? Number(getUserInput) : getUserInput;
+}
+
+const userName = userInput("Enter your name : ");
+const income = userInput("Enter your income : ",true) ;
+const numberOfExpenses = userInput("How many enpenses do you have ? ", true);
+
+// validation check function.
+function validationCheck(userInputedNumber)
+{
+if(isNaN(userInputedNumber) || userInputedNumber <= 0){
+   console.log("Please enter a valid number."); 
+   return;
 }else {
-
+    
 let expenses = [];
 
 for (let e = 1; e <= numberOfExpenses; e++) {
-    let expense = Number(prompt(`Enter your ${e} no expense:`));
-    
-if(isNaN(expense) || expense <= 0){
-     console.log("Please enter a valid number of expense.");
-}else {
+    let expense = userInput(`Enter your ${e} no expense:`, true);
     expenses.push(expense);
 }
-}
+
 
 // Calculate total expenses
 let totalExpenses = 0;
@@ -258,19 +333,30 @@ if (savings >= 1000) {
 }
 
 // Output
-console.log("Personal Budget Tracker App");
-console.log("User:", userName.toUpperCase());
-console.log("Total income: $" + income);
-console.log("Total expenses: $" + totalExpenses);
-console.log("Tax deduction: $" + tax);
-console.log("Net income after tax: $" + netIncome);
-console.log("Remaining balance: $" + balance);
-console.log("Savings (20%): $" + savings);
-console.log("Final status:", finalStatus);
+
+   console.log ("Personal Budget Tracker App");
+   console.log ("User:", userName.toUpperCase());
+   console.log ("Total income: $" + income);
+   console.log ("Total expenses: $" + totalExpenses);
+   console.log ("Tax deduction: $" + tax);
+   console.log ("Net income after tax: $" + netIncome);
+   console.log ("Remaining balance: $" + balance);
+   console.log ("Savings (20%): $" + savings);
+   console.log ("Final status:", finalStatus);
+
+
 
 // Overspending warning
 if (totalExpenses > netIncome) {
-    console.log("⚠️ Warning: Your expenses exceed your income.");
+    outputMessage = ("⚠️ Warning: Your expenses exceed your income.");
 }
 
 }
+
+}
+
+
+ validationCheck(numberOfExpenses);
+  validationCheck(expense);
+
+
