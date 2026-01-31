@@ -7,7 +7,7 @@
 
 // badget tracker phase 2-3 (string concat)
 
-// const userName = 'Aminul islam';
+//  userName = 'Aminul islam';
 // const income = 35000;
 // const expense = 15000;
 
@@ -287,76 +287,87 @@ function userInput(promptMessage, isNumber = false){
     return isNumber? Number(getUserInput) : getUserInput;
 }
 
-const userName = userInput("Enter your name : ");
-const income = userInput("Enter your income : ",true) ;
-const numberOfExpenses = userInput("How many enpenses do you have ? ", true);
-
 // validation check function.
 function validationCheck(userInputedNumber)
 {
 if(isNaN(userInputedNumber) || userInputedNumber <= 0){
    console.log("Please enter a valid number."); 
    return;
-}else {
-    
-let expenses = [];
-
-for (let e = 1; e <= numberOfExpenses; e++) {
-    let expense = userInput(`Enter your ${e} no expense:`, true);
-    expenses.push(expense);
+}
 }
 
+let allVariable = {
+    userName : userInput("Enter your name : "),
+    income : userInput("Enter your income : ",true),
+    numberOfExpenses : userInput("How many enpenses do you have ? ", true),
+
+    expenses : [],
+    finalStatus : "",
+    tax : 0,
+    netIncome : 0,
+    balance : 0,
+    savings :0,
+    totalExpenses : 0
+};
 
 // Calculate total expenses
-let totalExpenses = 0;
-for (let i = 0; i < expenses.length; i++) {
-    totalExpenses += expenses[i];
+
+function  CalculateTotalExpenses (numberOfExpenses){
+    for (let e = 1; e <= numberOfExpenses; e++) {
+    let expense = userInput(`Enter your ${e} no expense:`, true);
+    allVariable.expenses.push(expense);
+}
+
+for (let i = 0; i < allVariable.expenses.length; i++) {
+    allVariable.totalExpenses += allVariable.expenses[i];
+}
+
 }
 
 // Calculations
-let tax = income * 0.10;
-let netIncome = income - tax;
-let balance = netIncome - totalExpenses;
-let savings = balance > 0 ? balance * 0.20 : 0;
+  allVariable.tax = allVariable.income * 0.10;
+  allVariable.netIncome = allVariable.income - allVariable.tax;
+  allVariable.balance = allVariable.netIncome - allVariable.totalExpenses;
+  allVariable.savings = allVariable.balance > 0 ? allVariable.balance * 0.20 : 0;
 
-// Financial status
-let finalStatus = "";
 
-if (savings >= 1000) {
-    finalStatus = "Excellent";
-} else if (savings >= 500) {
-    finalStatus = "Good";
-} else if (savings >= 100) {
-    finalStatus = "Needs improvement";
-} else {
-    finalStatus = "Critical";
-}
 
 // Output
 
+function displayMessage(name, income, totalExpenses, tax, netIncome, balance, savings)
+{     
    console.log ("Personal Budget Tracker App");
-   console.log ("User:", userName.toUpperCase());
+   console.log ("User:", name.toUpperCase());
    console.log ("Total income: $" + income);
    console.log ("Total expenses: $" + totalExpenses);
    console.log ("Tax deduction: $" + tax);
    console.log ("Net income after tax: $" + netIncome);
    console.log ("Remaining balance: $" + balance);
    console.log ("Savings (20%): $" + savings);
-   console.log ("Final status:", finalStatus);
 
-
+// Financial status
+if (savings >= 1000) {
+    finalStatus = "Excellent";
+} else if (savings >= 500) {
+   finalStatus = "Good";
+} else if (savings >= 100) {
+    finalStatus = "Needs improvement";
+} else {
+    finalStatus = "Critical";
+}
+   console.log ("Final status: " + finalStatus);
 
 // Overspending warning
 if (totalExpenses > netIncome) {
-    outputMessage = ("⚠️ Warning: Your expenses exceed your income.");
+    console.log("⚠️ Warning: Your expenses exceed your income.");
 }
-
-}
-
 }
 
 
- validationCheck(numberOfExpenses);
-  validationCheck(expense);
+// budget tracker app 
+
+CalculateTotalExpenses(allVariable.numberOfExpenses)
+displayMessage(allVariable.userName, allVariable.income, allVariable.totalExpenses, allVariable.tax, allVariable.netIncome, allVariable.balance, allVariable.savings, allVariable.finalStatus)
+
 
 
