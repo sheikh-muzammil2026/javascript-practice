@@ -46,19 +46,59 @@
 // Task-4
 // Write a function called count_zero() which will take a binary string (Binary string is a string which is consist of only 0 and 1) as parameter and count how many 0’s are there in that string.
 
-function count_zero(binary){
+// function count_zero(binary){
 
-    let count =0;
-    for (let x =0; x < binary.length; x++){
+//     let count =0;
+//     for (let x =0; x < binary.length; x++){
        
-        if( binary[x] === "0"){   //binary[x] মানে হলো: string binary এর x নাম্বার index-এ থাকা character।
-            count ++;
-        }
+//         if( binary[x] === "0"){   //binary[x] মানে হলো: string binary এর x নাম্বার index-এ থাকা character।
+//             count ++;
+//         }
         
-    }
+//     }
     
-     return count;
+//      return count;
+// }
+
+// let binary = "10101010101010101";
+// console.log(count_zero(binary));
+
+
+//Task-5
+// Write a function called odd_even() which takes an integer value and tells whether this value is even or odd. If even return Even. If odd return Odd
+
+
+// function odd_even(number){
+//     return (number % 2 == 0) ? "Even" : "Odd";
+
+// }
+// let number = 90;
+
+// console.log(odd_even(number));
+
+
+// js-problems-part1-practice-tasks
+// Task-2:
+// You are given an array of numbers. Count how many times the a number is repeated in the array.
+// sample-input: numbers = [5,6,11,12,98, 5]
+// find: 5
+// output: 2
+// sample-input:
+// numbers = [5,6,11,12,98, 5]
+// find: 25
+// output: 0
+
+function repeated_number(numbers){
+    let find= 5;
+    let count =0;
+    for(let x=0; x < numbers.length; x ++){
+        if(numbers[x] === find){
+            count++;
+        }
+
+    }
+    return count;
 }
 
-let binary = "10101010101010101";
-console.log(count_zero(binary));
+let numbers = [5,6,11,12,98, 5];
+console.log(repeated_number(numbers));
