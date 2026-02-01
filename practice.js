@@ -324,11 +324,13 @@ for (let i = 0; i < allVariable.expenses.length; i++) {
 
 }
 
+CalculateTotalExpenses(allVariable.numberOfExpenses)   // টূটাল এক্সপেন্সেসকে সকল হিসাবের আগে কল করতে হবে। 
+
 // Calculations
   allVariable.tax = allVariable.income * 0.10;
   allVariable.netIncome = allVariable.income - allVariable.tax;
   allVariable.balance = allVariable.netIncome - allVariable.totalExpenses;
-  allVariable.savings = allVariable.balance > 0 ? allVariable.balance * 0.20 : 0;
+  allVariable.savings = allVariable.savings > 0 ? allVariable.balance * 0.20 : 0;
 
 
 
@@ -346,15 +348,12 @@ function displayMessage(name, income, totalExpenses, tax, netIncome, balance, sa
    console.log ("Savings (20%): $" + savings);
 
 // Financial status
-if (savings >= 1000) {
-    finalStatus = "Excellent";
-} else if (savings >= 500) {
-   finalStatus = "Good";
-} else if (savings >= 100) {
-    finalStatus = "Needs improvement";
-} else {
-    finalStatus = "Critical";
-}
+ if (savings >= 1000) finalStatus = "Excellent";
+ else if (savings >= 500) finalStatus = "Good";
+ else if (savings >= 100) finalStatus = "Needs improvement";
+ else finalStatus = "Critical";
+
+
    console.log ("Final status: " + finalStatus);
 
 // Overspending warning
@@ -366,8 +365,7 @@ if (totalExpenses > netIncome) {
 
 // budget tracker app 
 
-CalculateTotalExpenses(allVariable.numberOfExpenses)
-displayMessage(allVariable.userName, allVariable.income, allVariable.totalExpenses, allVariable.tax, allVariable.netIncome, allVariable.balance, allVariable.savings, allVariable.finalStatus)
+displayMessage(allVariable.userName, allVariable.income, allVariable.totalExpenses, allVariable.tax, allVariable.netIncome, allVariable.balance, allVariable.savings)
 
 
 
