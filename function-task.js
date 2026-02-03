@@ -1,3 +1,7 @@
+
+// Simple function Related Practice Tasks
+
+
 // task-1
 
 // function multiply (num1, num2, num3, num4){
@@ -88,17 +92,91 @@
 // find: 25
 // output: 0
 
-function repeated_number(numbers){
-    let find= 5;
-    let count =0;
-    for(let x=0; x < numbers.length; x ++){
-        if(numbers[x] === find){
-            count++;
-        }
+// function repeated_number(numbers,find){
+//     let count =0;
+//     for(let x=0; x < numbers.length; x ++){
+//         if(numbers[x] === find){
+//             count++;
+//         }
 
+//     }
+//     return count;
+// }
+
+// let numbers = [5,6,11,12,98, 5];
+// console.log(repeated_number(numbers,5));
+
+
+// js-problems-part2-practice-tasks
+
+
+// Task -1:
+// Find the lowest number in the array below.
+// const heights2 = [167, 190, 120, 165, 137];
+
+function lowest_number(numbers){
+    let min =numbers[0];
+    for(let x=1; x < numbers.length; x++ ){
+        if(numbers[x] < min){
+            min = numbers[x];
+        }
     }
-    return count;
+    return min;
 }
 
-let numbers = [5,6,11,12,98, 5];
-console.log(repeated_number(numbers));
+let numbers = [167, 190, 120, 165, 137];
+console.log(lowest_number(numbers));
+
+
+// Task -2:
+// Find the friend with the smallest name.
+// const heights2 = ['rahim', 'robin', 'rafi', 'ron', 'rashed'];
+
+function smallest_name(friends)
+{
+    let smallest = friends[0];
+
+    for (let x =1; x < friends.length; x++){
+
+        if(smallest.length > friends[x].length){   // ০ নং ইন্ডেক্স এর লেন্থ থেকে যদি এক্স ইন্ডেক্সের লেন্থ ছোট হয় ( তাহলে এক্স ইন্ডেক্সকেই প্রিন্ট কর। )
+            smallest = friends[x];   //  friends[x] মানে হল, এক্স নং ইন্ডেকের নেইম ভেলু আকারে সেট করে দাও।  
+        }
+    }
+    return smallest;
+}
+let friends = ['rahim', 'robin', 'rafi', 'ron', 'rashed'];
+console.log(smallest_name(friends));
+
+// Task-3:
+// Write a function to count the number of vowels in a string.
+
+// function count_vowels(str){
+//     let vowels = 0;
+//     let vowelList = "aeoui";
+//     for (let x=0; x < str.length; x++){
+//         if(vowelList.includes(str[x].toLowerCase())){
+//             vowels++;
+//         }
+//     }
+
+//     return vowels;
+// }
+
+// let str = "Hello Bangladesh";
+
+// console.log(count_vowels(str));
+
+
+// function count_vowels(str){
+//     let vowels =0;
+//     for(let x=0; str.lenght; x++ ){
+//         if(str[x] === "a"){
+//             vowels++
+//         }
+//     }
+
+//     return vowels;
+// }
+
+// let str = "Hello Banlgadesh";
+// console.log(count_vowels(str.split(",")));
