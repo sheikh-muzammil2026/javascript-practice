@@ -127,6 +127,9 @@ function lowest_number(numbers){
 let numbers = [167, 190, 120, 165, 137];
 console.log(lowest_number(numbers));
 
+// tip-2
+let max = Math.max(167, 190, 120, 165, 137,200);
+console.log(max);
 
 // Task -2:
 // Find the friend with the smallest name.
@@ -138,7 +141,7 @@ function smallest_name(friends)
 
     for (let x =1; x < friends.length; x++){
 
-        if(smallest.length > friends[x].length){   // ০ নং ইন্ডেক্স এর লেন্থ থেকে যদি এক্স ইন্ডেক্সের লেন্থ ছোট হয় ( তাহলে এক্স ইন্ডেক্সকেই প্রিন্ট কর। )
+        if(smallest.toLowerCase().length > friends[x].toLowerCase().length){   // ০ নং ইন্ডেক্স এর লেন্থ থেকে যদি এক্স ইন্ডেক্সের লেন্থ ছোট হয় ( তাহলে এক্স ইন্ডেক্সকেই প্রিন্ট কর। )
             smallest = friends[x];   //  friends[x] মানে হল, এক্স নং ইন্ডেকের নেইম ভেলু আকারে সেট করে দাও।  
         }
     }
@@ -147,36 +150,80 @@ function smallest_name(friends)
 let friends = ['rahim', 'robin', 'rafi', 'ron', 'rashed'];
 console.log(smallest_name(friends));
 
+
 // Task-3:
 // Write a function to count the number of vowels in a string.
 
-// function count_vowels(str){
-//     let vowels = 0;
-//     let vowelList = "aeoui";
-//     for (let x=0; x < str.length; x++){
-//         if(vowelList.includes(str[x].toLowerCase())){
-//             vowels++;
-//         }
-//     }
+function count_vowel(str){
+    let vowelList = "aeiou";
+    let count= 0;
+    for(let x=0; x <str.length; x++){
+        if(str.includes(x) === vowelList.includes(str[x])){
+            count++;
+        }
+    }
 
-//     return vowels;
-// }
+    return count;
+}
 
-// let str = "Hello Bangladesh";
+let str = "Helo Bnangladesh"
 
-// console.log(count_vowels(str));
+console.log(count_vowel(str));
 
 
-// function count_vowels(str){
-//     let vowels =0;
-//     for(let x=0; str.lenght; x++ ){
-//         if(str[x] === "a"){
-//             vowels++
-//         }
-//     }
+// homework; smallest number by for of loop
 
-//     return vowels;
-// }
+function min_number(numbers){
+    let min = numbers[0];
+    for(const num of numbers){
+        if(min < num)
+            min = num;
 
-// let str = "Hello Banlgadesh";
-// console.log(count_vowels(str.split(",")));
+    }
+    return min;
+}
+
+let totalnumers = [10,20,30,40,50,60,70,80];
+console.log(min_number(totalnumers));
+
+
+/**
+ * Task-3:
+Your task is to calculate the total budget required to buy electronics:
+
+    laptop = 35000 tk
+    tablet = 15000 tk
+    mobile = 20000 tk
+Write a JavaScript function named calculateElectronicsBudget that takes in the number of laptop, tablets, and mobile and returns the total money required.
+ **/ 
+
+// bigginer
+function calculateElectronicsBudget(num1, num2, num3){
+    let laptop = 35000;
+    let tablet = 15000;
+    let mobile = 20000; 
+    return (laptop * num1) + (tablet * num2) + (mobile * num3);
+
+}
+
+console.log(calculateElectronicsBudget(2,3,4));
+
+// advance solution
+function calculateElectronicsBudget(products){
+    let electronicsPrice = 0;
+    for(const product of products){
+       
+        electronicsPrice += product.price;
+    }
+
+    return electronicsPrice;
+
+}
+
+let totalBudget = [
+    {name: 'leptop', price: 35000},
+    {name: 'tablet', price: 15000}, 
+    {name: 'mobile', price: 20000}
+ ];
+
+console.log(calculateElectronicsBudget(totalBudget));
