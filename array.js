@@ -53,18 +53,3 @@ console.log(output);
 
 // reverse করার পর join() লাগে string বানাতে
 
-
-/**
- * Task 5
-Copy the given array into another array so that changing the copy does not affect the original.Change the first element of the copied array to 99.
-
-Input: [1, 2, 3]
-
-Expected Output:
-
-Original: [1, 2, 3] Copy: [99, 2, 3]
- * */ 
-
-let Original = [1, 2,3];
-let copy = [99, 2, 3];
-console.log(Original, copy);
