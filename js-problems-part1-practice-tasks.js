@@ -68,6 +68,7 @@ let str = "Helo Bnangladesh"
 console.log(count_vowel(str));
 
 
+
 // homework; smallest number by for of loop
 
 function min_number(numbers){

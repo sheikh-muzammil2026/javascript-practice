@@ -169,34 +169,34 @@ Output:
 
 */
 
-function calcBill(prices, items){
-    let totalBill =0;
-    let item_quantity ={};
-    let output = {};
-    for(const item_name in prices){ // অব্জেক্টে ফর অফ লুপ চালানো যায় না। ফর ইন চালাতে হয়। 
-      // console.log(price);
-       totalBill += prices[item_name];
+// function calcBill(prices, items){
+//     let totalBill =0;
+//     let item_quantity ={};
+//     let output = {};
+//     for(const item_name in prices){ // অব্জেক্টে ফর অফ লুপ চালানো যায় না। ফর ইন চালাতে হয়। 
+//       // console.log(price);
+//        totalBill += prices[item_name];
       
-    }
+//     }
 
-    for(const item of items){
-      console.log(item);
-      if(item_quantity.hasOwnProperty(item)){  // item_quantity এর মধ্যে আগে থেকেই যদি লুপ থেকে আসা item এর অনুরুপ থাকে, তাহলে item_quantity এর মান ১ বাড়াও। 
-        item_quantity[item] ++;
-      }else{
-        item_quantity[item] = 1;
-      }
-    }
-  return output = {
-    totalBill,
-    item_quantity
-  };
-}
+//     for(const item of items){
+//       console.log(item);
+//       if(item_quantity.hasOwnProperty(item)){  // item_quantity এর মধ্যে আগে থেকেই যদি লুপ থেকে আসা item এর অনুরুপ থাকে, তাহলে item_quantity এর মান ১ বাড়াও। 
+//         item_quantity[item] ++;
+//       }else{
+//         item_quantity[item] = 1;
+//       }
+//     }
+//   return output = {
+//     totalBill,
+//     item_quantity
+//   };
+// }
 
-  let prices = { rice: 70, oil: 180, egg: 12, sugar: 90 };
-  let items = ["egg", "egg", "rice", "oil", "egg", "sugar"];
+//   let prices = { rice: 70, oil: 180, egg: 12, sugar: 90 };
+//   let items = ["egg", "egg", "rice", "oil", "egg", "sugar"];
 
-  console.log(calcBill(prices, items));
+//   console.log(calcBill(prices, items));
 
   /**
    * Problem 5: Remove Duplicates From Array
@@ -216,48 +216,56 @@ Output:
 [1]
    * */ 
 
-function removeDuplicates(arr){
-  let output =[];
-  for(const number of arr){
-    if(output.hasOwnProperty(number)){
-      output.replace(number);
-    }else{
-      output.push(number);
-    }
-  }
-return output;
-}
+// function removeDuplicates(arr){
+//   let output =[];
+//   for(const number of arr){
+//     if(output.hasOwnProperty(number)){
+//       output.replace(number);
+//     }else{
+//       output.push(number);
+//     }
+//   }
+// return output;
+// }
 
-let inputNumber = [5, 3, 5, 2, 3, 9, 2, 7];
-console.log(removeDuplicates(inputNumber));
+// let inputNumber = [5, 3, 5, 2, 3, 9, 2, 7];
+// console.log(removeDuplicates(inputNumber));
+
+// Problem 6: Phonebook Prefix Search
 
 
 // problem-7
 
-// function textStats(text){
-//   let output = {};
-//   let characters = text.split("");
-//   console.log(characters);
-//   let vowelList = "aeiou";
-//   let totalVowel =0;
-//   for(const char of text){
-//     if(char.hasOwnProperty(vowelList)){
-//       totalVowel++;
-//     }
-//   }
-//   let totalWords = 0;
-//   let words = text.split(" ");
-//   for(const word of words){
-//     totalWords++;
-//   }
+function textStats(text){
+  let output = {};
+  let totalVowel =0;
+  let totalConst =0;
+  let totalWords = 0;
+  let totalCharacters =0;
 
-//   return output = {
-//     totalWords,
-//     totalVowel,
-//   };
+  for(const char of text){
+    
+    if(char.trim().length !== 0){  // খালি বাদ দেয়ার পরে যে লেন্থ থাকবে সেটার পরিমান যদি ০ না হয়, তাহলে পরের কাজ কর। আর ভেলু ০ হলে ইনভেলিড। 
+      totalCharacters ++;
+      "aeiou".includes(char) ? totalVowel++ :  totalConst ++;  // if সরাসরি ternary-এ লেখা যায় না।
 
-// }
+    }
+  }
+ 
+  let words = text.split(" ");
+  for(const word of words){
+    totalWords++;
+  }
 
-// let str = "JavaScript is fun to learn" ;
+  return output = {
+    totalCharacters,
+    totalWords,
+    totalVowel,
+    totalConst
+  };
 
-// console.log(textStats(str));
+}
+
+let str = "JavaScript is fun to learn" ;
+
+console.log(textStats(str));
