@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even handler</title>
+</head>
+<body id="bg">
+    <p id="text">Nothing</p>
+    
+    <button onclick="clickMe()">bg green</button>
+    <br>
+     <button id="btn">click me</button>
+      <br>
+     <button  id="color">change color</button>
+      <br>
+
+    <script>
+        // background change
+        function clickMe(){
+            document.getElementById("bg").style.backgroundColor = "green";
+        }
+
+        // text changed
+        document.getElementById("btn").addEventListener("click", function(){
+           document.getElementById("text").innerText = "button clicked";
+           
+        })
+
+        // text color change
+         document.getElementById("color").addEventListener("mouseover", function(){
+             document.getElementById("text").style.color = "green";
+
+                
+            })
+        
+    </script>
+</body>
+</html>
