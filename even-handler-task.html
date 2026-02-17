@@ -6,10 +6,16 @@
     <title>Even handler</title>
 </head>
 <body id="bg">
-    <p id="text">Nothing</p>
+
+   
     
-    <button onclick="clickMe()">bg green</button>
-    <br>
+    <button id="green">bg Green</button>
+    <button id="red">bg Red</button>
+    <button class="" id="blue">bg Blue</button>
+
+    <br> <br> <br>
+     <!-- <button onclick="clickMe()">bg Green</button> -->
+     <p id="text">Nothing</p>
      <button id="btn">click me</button>
       <br>
      <button  id="color">change color</button>
@@ -29,9 +35,7 @@
 
         // text color change
          document.getElementById("color").addEventListener("mouseover", function(){
-             document.getElementById("text").style.color = "green";
-
-                
+             document.getElementById("text").style.color = "black";  
             })
         
     </script>
