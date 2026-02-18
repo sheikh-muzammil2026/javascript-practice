@@ -4,39 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Even handler</title>
+    <style>
+        .btn-bg-changer{
+            border: 1px solid red;
+            padding: 20px;
+            margin-bottom:  10px;
+            max-width: 300px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          
+        }
+        .styled-btn{
+            padding: 10px;
+            border-radius: 10px;
+        }
+       
+    </style>
 </head>
-<body id="bg">
-
-   
+<body id="bg">  
     
-    <button id="green">bg Green</button>
-    <button id="red">bg Red</button>
-    <button class="" id="blue">bg Blue</button>
+    <!-- 🔹 Task 2: Background Color Changer -->
+    <div class="btn-bg-changer">
+    <button  class="styled-btn" id="red">Red</button>
+    <button  class="styled-btn" id="blue">Blue</button>
+    </div>
 
     <br> <br> <br>
-     <!-- <button onclick="clickMe()">bg Green</button> -->
-     <p id="text">Nothing</p>
-     <button id="btn">click me</button>
-      <br>
-     <button  id="color">change color</button>
-      <br>
+     <!-- 🔹 Task 1: Button Click → Text Change -->
+     <p id="text">Nothing</p><br>
+     <button class="styled-btn" id="btn">click me</button>
+      <br><br>
+     <button  class="styled-btn" id="color">change color</button>
+      <br><br>
+      <button  class="styled-btn" id="change-bg" onclick="clickMe()">Bg Green</button>
 
+      <!-- 🔹 Task 3: Input Live Preview -->
+          <br> <br> <br>
+       <label for="comment">Write something</label><br>
+       <input id="comment" type="textarea" >
+
+    <!-- javascript code -->
     <script>
-        // background change
-        function clickMe(){
-            document.getElementById("bg").style.backgroundColor = "green";
-        }
+        
 
-        // text changed
+        // 🔹 Task 1: Button Click → Text Change
         document.getElementById("btn").addEventListener("click", function(){
            document.getElementById("text").innerText = "button clicked";
            
         })
 
-        // text color change
+        //🔹 Task 1: Button Click → Text Change
          document.getElementById("color").addEventListener("mouseover", function(){
-             document.getElementById("text").style.color = "black";  
+             document.getElementById("text").style.color = "red";  
             })
+
+            
+
+        // 🔹 Task 2: Background Color Changer
+        function clickMe(){
+            document.getElementById("bg").style.backgroundColor = "green";
+        }
+        document.getElementById("change-bg").addEventListener("mouseout", function(){
+            document.getElementById("bg").style.backgroundColor = "white";
+        })
+
+         // 🔹 Task 2: Background Color Changer
+
+         document.getElementById("red").addEventListener("click", function(){
+            document.getElementById("bg").style.backgroundColor = "red";
+        })
+
+         document.getElementById("blue").addEventListener("click", function(){
+            document.getElementById("bg").style.backgroundColor = "blue";
+        })
+
+        // 🔹 Task 3: Input Live Preview
+
+        
         
     </script>
 </body>
