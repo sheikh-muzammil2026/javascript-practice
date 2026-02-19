@@ -12,7 +12,7 @@
             max-width: 300px;
             border-radius: 30px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
           
         }
@@ -42,13 +42,13 @@
 
       <!-- 🔹 Task 3: Input Live Preview -->
           <br> <br> <br>
-       <label for="comment">Write something</label><br>
-       <input id="comment" type="textarea" >
+       <label for="comment">Write something</label><br><br>
+       <textarea id="comment" cols="30" rows="10"></textarea>
+       <p class="" id="wrote">You typed: </p>
 
     <!-- javascript code -->
     <script>
         
-
         // 🔹 Task 1: Button Click → Text Change
         document.getElementById("btn").addEventListener("click", function(){
            document.getElementById("text").innerText = "button clicked";
@@ -80,7 +80,18 @@
             document.getElementById("bg").style.backgroundColor = "blue";
         })
 
-        // 🔹 Task 3: Input Live Preview
+        // 🔹 Task 3: Input Live Preview 
+         // 1- comment ke input proparty diye function banabo
+         // 2- comment box theke value niye variable e rakhbo
+         // 3- comment box er value ke wrote id te innerText diye bosiye dibo.
+         document.getElementById("comment").addEventListener('input', function(){
+            let textValue = document.getElementById("comment").value;
+            document.getElementById("wrote").innerText = "Your typed: "+ textValue;
+         })
+
+         // 🔹 Task 4: Show/Hide Password
+         //1- checkbox nibo. click korle input tag er attribute change hoye zabe.
+
 
         
         
