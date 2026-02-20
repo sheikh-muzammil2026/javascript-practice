@@ -54,29 +54,29 @@
       
     <div class="card-container grid grid-cols-3 grid-rows-2 gap-[10px] mt-8 px-[10px]">
       
-       <button class="btn flex-col h-full py-4 text-black  btn-primary btn-soft">
+       <button onclick="showOnly('add-money')" class="btn flex-col h-full py-4 text-black  btn-primary btn-soft">
                 <img src="assets/opt-1.png" alt="">
                 <p class="opacity-75">Add Money</p>
             </button>
 
-        <button id="btn-cashout" class="btn flex-col h-full py-4  text-black  btn-primary btn-soft">
+        <button onclick="showOnly('cashout')" class="btn flex-col h-full py-4  text-black  btn-primary btn-soft">
                 <img src="assets/opt-2.png" alt="">
                 <p class="opacity-75">Cash out</p>
         </button>
 
-        <button class="btn flex-col h-full   text-black  py-4 btn-primary btn-soft">
+        <button onclick="showOnly('send-money')" class="btn flex-col h-full   text-black  py-4 btn-primary btn-soft">
                 <img src="assets/opt-3.png" alt="">
                 <p class="opacity-75">Send Money</p>
         </button>
-        <button class="btn flex-col h-full  text-black  py-4 btn-primary btn-soft">
+        <button onclick="showOnly('get-bonus')" class="btn flex-col h-full  text-black  py-4 btn-primary btn-soft">
                 <img src="assets/opt-4.png" alt="">
                 <p class="opacity-75">Get Bonus</p>
         </button>
-        <button class="btn flex-col h-full  text-black  py-4 btn-primary btn-soft">
+        <button onclick="showOnly('pay-bill')" class="btn flex-col h-full  text-black  py-4 btn-primary btn-soft">
                 <img src="assets/opt-5.png" alt="">
                 <p class="opacity-75">Pay Bill</p>
         </button>
-        <button class="btn flex-col h-full  text-black  py-4 btn-primary btn-soft">
+        <button onclick="showOnly('send-money')" class="btn flex-col h-full  text-black  py-4 btn-primary btn-soft">
                 <img src="assets/opt-6.png" alt="">
                 <p class="opacity-75">Transactions</p>
         </button>
@@ -88,7 +88,7 @@
 
     <!-- add-money-section -->
   
-  <section class="add-money-container ml-4 bg-base-200 mx-auto py-5 hidden">
+  <section id="add-money" class="add-money-container ml-4 bg-base-200 mx-auto py-5">
     <p class="mb-4 ">Add Money</p>
   <fieldset class="fieldset  ml-4 mx-auto bg-base-100  ">
 
@@ -117,7 +117,7 @@
 
   <!-- Cash out section -->
   
-  <section class="add-money-container ml-4 bg-base-200 mx-auto py-5">
+  <section id="cashout" class="cashout-container ml-4 bg-base-200 mx-auto py-5">
     <p class="mb-4 font-bold ">Cash Out</p>
   <fieldset class="fieldset  ml-4 mx-auto bg-base-100  ">
     
@@ -138,7 +138,7 @@
 
   <!--transfer money -->
   
-  <section class="add-money-container ml-4 bg-base-200 mx-auto py-5 hidden">
+  <section id="send-money" class="transfer-container ml-4 bg-base-200 mx-auto py-5">
     <p class="mb-4 font-bold ">Transfer Money</p>
   <fieldset class="fieldset  ml-4 mx-auto bg-base-100 shadow rounded-2xl ">
     
