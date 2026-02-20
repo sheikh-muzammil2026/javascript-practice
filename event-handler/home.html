@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    
+  
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  *{
+      font-family: "Outfit", sans-serif;
+  }
+</style>
+
+</head>
+<body>
+    
+  <div class="home-page bg-base-100 max-w-md mx-auto rounded-md">
+
+    <!-- navbar section -->
+    <section class="navbar  bg-base-100 shadow-sm flex justify-between items-center">
+    <div class="flex gap-1">
+        <div class="logo  w-[60px]">
+          <img src="./assets/logo.png" alt="" >
+        </div>
+       <div  class="flex flex-col"> 
+        <h2 class="font-bold">$<span id="balance">45000</span></h2>
+      <p class="opacity-50">Available Balance</p>
+    </div>
+    </div>
+        
+    <div class="navbar-end">
+      <a class="btn btn-soft  rounded-xl shadow-md"><i class="fas fa-sign-out"></i>Logout</a>
+    </div>
+    </section>
+
+
+    <!-- hero section -->
+     <div class="welcome-msg mt-4 px-[20px]">
+      <h1 class="text-2xl font-bold mb-4">Welcome to pay<span class="text-[#7460FF]">oo</span></h1>
+      <p class="opacity-50">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+    </div>
+
+
+    <section class="hero">
+      
+    <div class="card-container grid grid-cols-3 grid-rows-2 gap-[10px] mt-8 px-[10px]">
+      
+      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 rounded-xl justify-center p-4">
+        <img src="./assets/opt-1.png" alt="">
+        <p>Add Money</p>
+      </div>
+
+      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 justify-center rounded-xl p-4">
+        <img src="./assets/opt-2.png" alt="">
+        <p>Chash out</p>
+      </div>
+
+      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 rounded-xl justify-center">
+       <img src="./assets/opt-3.png" alt="">
+        <p>Transfer Money</p>
+      </div>
+
+      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 justify-center rounded-xl p-4">
+        <img src="./assets/opt-4.png" alt="">
+        <p>Get Bonus</p>
+      </div>
+
+      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 justify-center rounded-xl p-4">
+        <img src="./assets/opt-5.png" alt="">
+        <p>Pay Bill</p>
+      </div>
+
+      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 justify-center rounded-xl p-4">
+       <img src="./assets/opt-6.png" alt="">
+        <p>Transactions</p>
+      </div>
+      
+    </div>
+    </section>
+
+
+    <!-- add-money-container -->
+  
+  <section class="add-money-container ml-4 bg-base-200 mx-auto py-5">
+    <p class="mb-4 ">Add Money</p>
+  <fieldset class="fieldset mx-auto bg-base-100  ">
+
+  <label class="label font-bold text-black">Select a bank</label>
+<select class="select select-ghost border bg-base-200 rounded-full">
+  <option placeholder="Select a bank">Select a Bank</option>
+  <option>IBBL</option>
+  <option>City</option>
+  <option>SHJL</option>
+</select>
+
+    
+  <label class="label text-black font-bold">Bank Account Number</label>
+  <input type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter 11 account number" />
+
+    <label class="label font-bold text-black">Ammount to Add</label>
+  <input type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter Amount to withdraw" />
+
+  <label class="label text-black font-bold">Pin Number</label>
+  <input type="password" class="input border-0 rounded-full bg-base-200" placeholder="Enter 4 Digit pin" />
+
+  <button class="btn rounded-full btn-primary mt-4">Add Money</button>
+</fieldset>
+</section>
+  
+</div>
+</body>
+</html>
