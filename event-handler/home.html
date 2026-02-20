@@ -54,60 +54,58 @@
       
     <div class="card-container grid grid-cols-3 grid-rows-2 gap-[10px] mt-8 px-[10px]">
       
-      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 rounded-xl justify-center p-4">
-        <img src="./assets/opt-1.png" alt="">
-        <p>Add Money</p>
-      </div>
+       <button class="btn flex-col h-full py-4 text-black  btn-primary btn-soft">
+                <img src="assets/opt-1.png" alt="">
+                <p class="opacity-75">Add Money</p>
+            </button>
 
-      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 justify-center rounded-xl p-4">
-        <img src="./assets/opt-2.png" alt="">
-        <p>Chash out</p>
-      </div>
+        <button id="btn-cashout" class="btn flex-col h-full py-4  text-black  btn-primary btn-soft">
+                <img src="assets/opt-2.png" alt="">
+                <p class="opacity-75">Cash out</p>
+        </button>
 
-      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 rounded-xl justify-center">
-       <img src="./assets/opt-3.png" alt="">
-        <p>Transfer Money</p>
-      </div>
+        <button class="btn flex-col h-full   text-black  py-4 btn-primary btn-soft">
+                <img src="assets/opt-3.png" alt="">
+                <p class="opacity-75">Send Money</p>
+        </button>
+        <button class="btn flex-col h-full  text-black  py-4 btn-primary btn-soft">
+                <img src="assets/opt-4.png" alt="">
+                <p class="opacity-75">Get Bonus</p>
+        </button>
+        <button class="btn flex-col h-full  text-black  py-4 btn-primary btn-soft">
+                <img src="assets/opt-5.png" alt="">
+                <p class="opacity-75">Pay Bill</p>
+        </button>
+        <button class="btn flex-col h-full  text-black  py-4 btn-primary btn-soft">
+                <img src="assets/opt-6.png" alt="">
+                <p class="opacity-75">Transactions</p>
+        </button>
 
-      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 justify-center rounded-xl p-4">
-        <img src="./assets/opt-4.png" alt="">
-        <p>Get Bonus</p>
-      </div>
-
-      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 justify-center rounded-xl p-4">
-        <img src="./assets/opt-5.png" alt="">
-        <p>Pay Bill</p>
-      </div>
-
-      <div class=" btn-primary btn-soft flex flex-col items-center shadow-sm gap-2 justify-center rounded-xl p-4">
-       <img src="./assets/opt-6.png" alt="">
-        <p>Transactions</p>
-      </div>
       
     </div>
     </section>
 
 
-    <!-- add-money-container -->
+    <!-- add-money-section -->
   
-  <section class="add-money-container ml-4 bg-base-200 mx-auto py-5">
+  <section class="add-money-container ml-4 bg-base-200 mx-auto py-5 hidden">
     <p class="mb-4 ">Add Money</p>
-  <fieldset class="fieldset mx-auto bg-base-100  ">
+  <fieldset class="fieldset  ml-4 mx-auto bg-base-100  ">
 
   <label class="label font-bold text-black">Select a bank</label>
-<select class="select select-ghost border bg-base-200 rounded-full">
-  <option placeholder="Select a bank">Select a Bank</option>
-  <option>IBBL</option>
-  <option>City</option>
-  <option>SHJL</option>
-</select>
+  <select class="select select-ghost border bg-base-200 rounded-full">
+    <option placeholder="Select a bank">Select a Bank</option>
+    <option>IBBL</option>
+    <option>City</option>
+    <option>SHJL</option>
+  </select>
 
     
   <label class="label text-black font-bold">Bank Account Number</label>
-  <input type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter 11 account number" />
+  <input type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter account number" />
 
     <label class="label font-bold text-black">Ammount to Add</label>
-  <input type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter Amount to withdraw" />
+  <input type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter Amount to Add" />
 
   <label class="label text-black font-bold">Pin Number</label>
   <input type="password" class="input border-0 rounded-full bg-base-200" placeholder="Enter 4 Digit pin" />
@@ -115,7 +113,49 @@
   <button class="btn rounded-full btn-primary mt-4">Add Money</button>
 </fieldset>
 </section>
+
+
+  <!-- Cash out section -->
   
+  <section class="add-money-container ml-4 bg-base-200 mx-auto py-5">
+    <p class="mb-4 font-bold ">Cash Out</p>
+  <fieldset class="fieldset  ml-4 mx-auto bg-base-100  ">
+    
+  <label  class="label text-black font-semibold">Agent Number</label>
+  <input id="agent-number" type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter 11 digit number" />
+
+    <label  class="label font-semibold text-black">Ammount</label>
+  <input id="cashout-ammount" type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter amount to withdraw" />
+
+  <label class="label text-black font-semibold">Pin Number</label>
+  <input id="cashout-pin" type="password" class="input border-0 rounded-full bg-base-200" placeholder="Enter 4 digit pin number" />
+
+  <button id="btn-withraw" class="btn rounded-full btn-primary mt-4">Withdraw Money</button>
+</fieldset>
+</section>
+
+
+
+  <!--transfer money -->
+  
+  <section class="add-money-container ml-4 bg-base-200 mx-auto py-5 hidden">
+    <p class="mb-4 font-bold ">Transfer Money</p>
+  <fieldset class="fieldset  ml-4 mx-auto bg-base-100 shadow rounded-2xl ">
+    
+  <label class="label text-black font-semibold">User Account Number</label>
+  <input type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter 11 digit number" />
+
+    <label class="label font-semibold text-black">Ammount</label>
+  <input type="text" class="input border-0 rounded-full bg-base-200" placeholder="Enter amount to withdraw" />
+
+  <label class="label text-black font-semibold">Pin Number</label>
+  <input type="password" class="input border-0 rounded-full bg-base-200" placeholder="Enter 4 digit pin number" />
+
+  <button class="btn rounded-full btn-primary mt-4">Send Now</button>
+</fieldset>
+</section>
+  <script src="./script/machin.js"></script>
+  <script src="./script/cashout.js"></script>
 </div>
 </body>
 </html>
